@@ -19,7 +19,7 @@ on:
   schedule:
     - cron: 0 20 * * *
 
-jobs:
+obs:
 
   build:
 
@@ -64,7 +64,7 @@ jobs:
           find dl -size -1024c -exec rm -f {} \;
       - name: Compile firmware
         run: |
-          make -j$(nproc) || make -j2 V=s
+          make -j$(nproc) || make -j1 V=s
           echo "======================="
           echo "Space usage:"
           echo "======================="
